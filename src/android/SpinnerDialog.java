@@ -55,6 +55,10 @@ public class SpinnerDialog extends CordovaPlugin {
 						dialog.setContentView(new ProgressBar(cordova.getActivity()));
 					}
 					
+					// avoid dialog close by click on outside or by back button
+					dialog.setCancelable(false);
+		        	dialog.setCanceledOnTouchOutside(false);
+					
 					SpinnerDialog.this.spinnerDialogStack.push(dialog);
 
 				}
